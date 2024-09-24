@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/96c75676d8.js" crossorigin="anonymous"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyX95Pp5Kdh_u6Gv_BSRYuu4jSt3dZjJo&libraries=places"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Drop It</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-section {
+            background-image: url('assets/bg-home.png');
+            background-color: #FFFCEB;
+            margin-top: 60px;
+            background-size: cover;
+            background-position: right;
+            padding: 60px 0;
+            color: #000000;
+            text-align: center;
+            position: relative;
+            height: 450px;
+            /* width: 100%; */
+        }
+
+        .hero-text {
+            margin: 0 20px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            margin-top: 60px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            margin-top: 0;
+            margin-left: 250px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-subtext {
+            margin: 0 20px;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 250px;
+        }
+
+        .hero-subtext p {
+            font-size: 1.2em;
+            color: #838383;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .email-subscription {
+            display: flex;
+            margin-left: 250px;
+        }
+
+        .email-subscription input[type="email"] {
+            padding: 10px;
+            font-size: 1em;
+            font-family: "Quicksand", sans-serif;
+            color: #000000;
+            border: 0px solid #ffffff;
+            border-radius: 0px 0 0 0px;
+            width: 300px;
+            height: 40px;
+            outline: none;
+        }
+
+        .email-subscription button {
+            padding: 10px;
+            font-size: 1em;
+            font-family: "Quicksand", sans-serif;
+            height: 60px;
+            width: 120px;
+            border: 0px solid #3BB77E;
+            background-color: #3BB77E;
+            color: white;
+            border-radius: 0 0px 0px 0;
+            cursor: pointer;
+            gap: none;
+            outline: none;
+        }
+
+        .email-subscription button:hover {
+            background-color: #339966;
+        }
+
+        .category-list,
+        .product-list {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .category-list::-webkit-scrollbar,
+        .product-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .current {
+            color: #3BB77E;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div >
+    <script src="footer.js"></script>
+
+    <div id="above-bar"></div>
+
+    <div id="navbar"></div>
+    <div id="bottom-bar"></div>
+
+    <!-- <div class="bottom-bar">
+        <div class="bottom-bar-left">
+            <a href="index.html" class="bottom-bar-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="hotdeals.html" class="bottom-bar-item">
+                <i class="fas fa-fire"></i> Hot Deals
+            </a>
+            <a href="new_products.html" class="bottom-bar-item">
+                <img src="assets/li_megaphone.png" alt="New Products"> New Products
+            </a>
+        </div>
+        <div class="bottom-bar-right">
+            <div class="bottom-bar-item">
+                <i class="fas fa-phone"></i> 108-10808 24/7 Support Center
+            </div>
+        </div>
+    </div> -->
+
+     <div class="hero-section">
+        <div class="hero-text">
+            <h1>Don't miss amazing<br>grocery deals.</h1>
+            <div class="hero-subtext">
+                <p>Save up to 50% off on your first order</p>
+            </div>
+            <div class="email-subscription">
+              
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./assets/hero.png" alt="Grocery Deals">
+        </div>
+    </div>  
+
+
+
+
+    <div class="explore-section">
+        <div class="explore-header">
+            <p>Explore</p>
+            <div class="explore-buttons">
+                <a href="index.html" class="explore-button">All</a>
+                <a href="vegetables.html" class="explore-button">Vegetables</a>
+                <a href="fruits.html" class="explore-button">Fruits</a>
+                <a href="stationery.html" class="explore-button">Stationery</a>
+                <a href="home_needs.html" class="explore-button">Home Needs</a>
+            </div>
+        </div>
+        <div class="categories">
+            <button class="arrow left-arrow"><i class="fa-solid fa-chevron-left"></i></i></button>
+            <div class="category-list">
+                <div class="category-item" style="background-color: #FEEFEA;">
+                    <img src="./assets/fruits.png" alt="Fruits & Vegetables">
+                    <p>Fruits & Vegetables</p>
+                    <span>20 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #FFF3FF;">
+                    <img src="./assets/masala.png" alt="Masala & Dry Fruits">
+                    <p>Masala & Dry Fruits</p>
+                    <span>220 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #F2FCE4;">
+                    <img src="./assets/frozen_food.png" alt="Frozen Food & Ice Creams">
+                    <p>Frozen Food & Ice Creams</p>
+                    <span>10 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #FEEFEA;">
+                    <img src="./assets/packaged.png" alt="Packaged Food">
+                    <p>Packaged Food</p>
+                    <span>40 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #ECFFEC;">
+                    <img src="./assets/juice.png" alt="Cool Drinks & Juices">
+                    <p>Cool Drinks & Juices</p>
+                    <span>23 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #FFFCEB;">
+                    <img src="./assets/electrical.png" alt="Electrical & Accessories">
+                    <p>Electrical & Accessories</p>
+                    <span>3 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #DEF9EC;">
+                    <img src="./assets/stationery.png" alt="Stationery & Crafts">
+                    <p>Stationery & Crafts</p>
+                    <span>9 Items</span>
+                </div>
+                <div class="category-item" style="background-color: #ECFFEC;">
+                    <img src="./assets/juice.png" alt="Cool Drinks & Juices">
+                    <p>Cool Drinks & Juices</p>
+                    <span>23 Items</span>
+                </div>
+
+            </div>
+
+            <button class="arrow right-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- features -->
+
+    <div class="featured-section">
+        <div class="featured-header">
+            <p>Featured Products</p>
+            <div class="featured-buttons">
+                <a href="index.html" class="featured-button">All</a>
+                <a href="vegetables.html" class="featured-button">Vegetables</a>
+                <a href="fruits.html" class="featured-button">Fruits</a>
+                <a href="stationery.html" class="featured-button">Stationery</a>
+                <a href="home_needs.html" class="featured-button">Home Needs</a>
+            </div>
+        </div>
+        <div class="featured-products">
+            <button class="arrow left-arrow"><i class="fas fa-arrow-left"></i></button>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="./assets/product1.png" alt="Product 1">
+                    <div class="product-name-wrapper">
+                        <p>Tomato Local</p>
+                        <i class="far fa-heart heart-icon" onclick="toggleWishlist(this, 'Tomato Local')"></i>
+                    </div>
+                    <span class="product-weight">1kg</span>
+                    <div class="product-rating" style="margin-top: 10px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+
+                    </div>
+                    <div class="product-price-add">
+                        <div class="product-price">₹ 60</div>
+                        <div class="add-to-cart">
+                            <button class="add-to-cart-button" onclick="addToCart(this)">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                        </div>
+                        <div class="quantity-controls" style="display: none;">
+                            <button class="quantity-button" onclick="updateQuantity(this, -1)">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-button" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="./assets/product2.png" alt="Product 2">
+                    <div class="product-name-wrapper">
+                        <p>Ginger</p>
+                        <i class="far fa-heart heart-icon" onclick="toggleWishlist(this, 'Ginger')"></i>
+                    </div>
+                    <span class="product-weight">1kg</span>
+                    <div class="product-rating" style="margin-top: 10px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+
+                    </div>
+                    <div class="product-price-add">
+                        <div class="product-price">₹ 60</div>
+                        <div class="add-to-cart">
+                            <button class="add-to-cart-button" onclick="addToCart(this)">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                        </div>
+                        <div class="quantity-controls" style="display: none;">
+                            <button class="quantity-button" onclick="updateQuantity(this, -1)">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-button" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/product3.png" alt="Product 3">
+                    <div class="product-name-wrapper">
+                        <p>Product 3</p>
+                        <i class="far fa-heart heart-icon" onclick="toggleWishlist(this, 'Product 3')"></i>
+                    </div>
+                    <span class="product-weight">1kg</span>
+                    <div class="product-rating" style="margin-top: 10px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+
+                    </div>
+                    <div class="product-price-add">
+                        <div class="product-price">₹ 60</div>
+                        <div class="add-to-cart">
+                            <button class="add-to-cart-button">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                        </div>
+                        <div class="quantity-controls" style="display: none;">
+                            <button class="quantity-button" onclick="updateQuantity(this, -1)">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-button" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/product4.png" alt="Product 4">
+                    <div class="product-name-wrapper">
+                        <p>Product 4</p>
+                        <i class="far fa-heart heart-icon" onclick="toggleWishlist(this, 'Product 4')"></i>
+                    </div>
+                    <span class="product-weight">1kg</span>
+                    <div class="product-rating" style="margin-top: 10px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+
+                    </div>
+                    <div class="product-price-add">
+                        <div class="product-price">₹ 60</div>
+                        <div class="add-to-cart">
+                            <button class="add-to-cart-button"><i class="fas fa-shopping-cart"></i> Add</button>
+                        </div>
+                        <div class="quantity-controls" style="display: none;">
+                            <button class="quantity-button" onclick="updateQuantity(this, -1)">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-button" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/product4.png" alt="Product 4">
+                    <div class="product-name-wrapper">
+                        <p>Product 4</p>
+                        <i class="far fa-heart heart-icon" onclick="toggleWishlist(this, 'Product 4')"></i>
+                    </div>
+                    <span class="product-weight">1kg</span>
+                    <div class="product-rating" style="margin-top: 10px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+
+                    </div>
+                    <div class="product-price-add">
+                        <div class="product-price">₹ 60</div>
+                        <div class="add-to-cart">
+                            <button class="add-to-cart-button"><i class="fas fa-shopping-cart"></i> Add</button>
+                        </div>
+                        <div class="quantity-controls" style="display: none;">
+                            <button class="quantity-button" onclick="updateQuantity(this, -1)">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-button" onclick="updateQuantity(this, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow right-arrow"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+
+    <div class="rect-imageshp">
+        <img src="assets/Rectangle.png" alt="" class="rec-img-1hp">
+        <img src="assets/Rectangle.png" alt="" class="rec-img-1hp">
+    </div>
+
+    <!-- daily best -->
+    <div class="daily-best-sells">
+        <div class="daily-best-header">
+            <div class="daily-best-header-left">
+                <p>Daily Best Sells</p>
+                <div class="daily-best-buttons">
+
+                    <a href="index.html" class="daily-best-button">Featured</a>
+                    <a href="popular.html" class="daily-best-button">Popular</a>
+                    <a href="new-products.html" class="daily-best-button">New</a>
+                </div>
+
+                <div class="expires-in">
+                    <span>Expires in :</span>
+                    <div id="timer" style="margin-left: 15px;">0 : 00 : 00</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="products-wrapper">
+            <div class="product-card">
+                <div class="discount-label">Save 10%</div>
+                <img src="./assets/coffee.png" alt="Coffee">
+                <p class="category">Coffee & Tea</p>
+                <p class="product-title">Coffee 1kg</p>
+                <div class="product-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star inactive"></i>
+                    <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                </div>
+                <p class="seller"><span style="color: #ADADAD;">By</span> Mr. Food</p>
+                <div class="price">
+                    <span class="new-price">₹ 64</span>
+                    <span class="old-price">80</span>
+                </div>
+                <div class="sold">
+                    <div class="sold-bar" style="width: 60%; border-radius: 5px"></div>
+                    <span style="font-size: 12px; text-align: left">Sold: 20/50</span>
+                </div>
+                <!-- <button class="daily-add-to-cart-button"><i class="fas fa-shopping-cart"></i> Add to cart</button> -->
+                <div class="product-price-add">
+                    <div class="add-to-cart">
+                        <button class="daily-add-to-cart-button" onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to cart
+                        </button>
+                    </div>
+                    <div class="quantity-controls" style="display: none;">
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="daily-quantity">1</span>
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="discount-label">Save 10%</div>
+                <img src="./assets/coffee.png" alt="Coffee">
+                <p class="category">Coffee & Tea</p>
+                <p class="product-title">Coffee 1kg</p>
+                <div class="product-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star inactive"></i>
+                    <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                </div>
+                <p class="seller"><span style="color: #ADADAD;">By</span> Mr. Food</p>
+                <div class="price">
+                    <span class="new-price">₹ 64</span>
+                    <span class="old-price">80</span>
+                </div>
+                <div class="sold">
+                    <div class="sold-bar" style="width: 60%; border-radius: 5px"></div>
+                    <span style="font-size: 12px; text-align: left">Sold: 20/50</span>
+                </div>
+                <!-- <button class="daily-add-to-cart-button"><i class="fas fa-shopping-cart"></i> Add to cart</button> -->
+                <div class="product-price-add">
+                    <div class="add-to-cart">
+                        <button class="daily-add-to-cart-button" onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to cart
+                        </button>
+                    </div>
+                    <div class="quantity-controls" style="display: none;">
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="daily-quantity">1</span>
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="discount-label">Save 10%</div>
+                <img src="./assets/coffee.png" alt="Coffee">
+                <p class="category">Coffee & Tea</p>
+                <p class="product-title">Coffee 1kg</p>
+                <div class="product-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star inactive"></i>
+                    <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                </div>
+                <p class="seller"><span style="color: #ADADAD;">By</span> Mr. Food</p>
+                <div class="price">
+                    <span class="new-price">₹ 64</span>
+                    <span class="old-price">80</span>
+                </div>
+                <div class="sold">
+                    <div class="sold-bar" style="width: 60%; border-radius: 5px"></div>
+                    <span style="font-size: 12px; text-align: left">Sold: 20/50</span>
+                </div>
+                <!-- <button class="daily-add-to-cart-button"><i class="fas fa-shopping-cart"></i> Add to cart</button> -->
+                <div class="product-price-add">
+                    <div class="add-to-cart">
+                        <button class="daily-add-to-cart-button" onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to cart
+                        </button>
+                    </div>
+                    <div class="quantity-controls" style="display: none;">
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="daily-quantity">1</span>
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="discount-label">Save 10%</div>
+                <img src="./assets/coffee.png" alt="Coffee">
+                <p class="category">Coffee & Tea</p>
+                <p class="product-title">Coffee 1kg</p>
+                <div class="product-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star inactive"></i>
+                    <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                </div>
+                <p class="seller"><span style="color: #ADADAD;">By</span> Mr. Food</p>
+                <div class="price">
+                    <span class="new-price">₹ 64</span>
+                    <span class="old-price">80</span>
+                </div>
+                <div class="sold">
+                    <div class="sold-bar" style="width: 60%; border-radius: 5px"></div>
+                    <span style="font-size: 12px; text-align: left">Sold: 20/50</span>
+                </div>
+                <!-- <button class="daily-add-to-cart-button"><i class="fas fa-shopping-cart"></i> Add to cart</button> -->
+                <div class="product-price-add">
+                    <div class="add-to-cart">
+                        <button class="daily-add-to-cart-button" onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to cart
+                        </button>
+                    </div>
+                    <div class="quantity-controls" style="display: none;">
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="daily-quantity">1</span>
+                        <button class="daily-best-quantity" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- email new memver -->
+            <div class="new-member-offer">
+                <h3>10% OFF</h3>
+                <p style="color: #3BB77E; font-size: 16px;">For new members signing up for the first time</p>
+                <form class="signup-form">
+                    <!-- <i class="fa-regular fa-envelope" style="color:#000000; text-align: left;">Email Address <span style="color: red;">*</span></i> -->
+                    <p style="color:#000000; text-align: left;">Email Address <span style="color: red;">*</span></p>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="abc@gmail.com" required>
+                    </div>
+                    <p style="color:#000000; text-align: left;">Password <span style="color: red;">*</span></p>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" placeholder="Maximum 8 characters" required>
+
+                    </div>
+
+                    <button type="submit">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- top rated -->
+    <div class="top-container">
+        <div class="top">
+            <p class="top-sells-heading">Top Sells</p>
+            <div class="product">
+                <img src="assets/aashirvaad.png" alt="aashirvaad">
+                <div class="product-info">
+                    <p class="top-product-name">Aashirvaad select</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/leaf.png" alt="leaf">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/starwberry.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="top">
+            <p class="top-sells-heading">Top Rating</p>
+            <div class="product">
+                <img src="assets/salt.png" alt="Sugar">
+                <div class="product-info">
+                    <p class="top-product-name">White Sugar</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/orange.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/apple.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top">
+            <p class="top-sells-heading">Trending Items</p>
+            <div class="product">
+                <img src="assets/carrot.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Carrots 1kg</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/potato.png" alt="potato">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/carrot.png" alt="carrot">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top">
+            <p class="top-sells-heading">Recently added</p>
+            <div class="product">
+                <img src="assets/starwberry.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Starwberry 1kgg</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/battery.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="assets/gadget.png" alt="starwberry">
+                <div class="product-info">
+                    <p class="top-product-name">Lorem Ipsum</p>
+                    <div class="product-rating" style="margin-bottom: 5px;">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star inactive"></i>
+                        <span style="font-size: 12px; color: #ADADAD;">(4)</span>
+                    </div>
+                    <div class="price">
+                        <span class="new-price">₹ 64</span>
+                        <span class="old-price">80</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="navbar.js"></script>
+    <script src="slider.js"></script>
+    <script src="favorite.js"></script>
+    <script src="quantity.js"></script>
+
+    <script>
+        const targetDateKey = 'timerTargetDate';
+        function initializeTimer() {
+            let targetDate = localStorage.getItem(targetDateKey);
+            if (!targetDate) {
+                targetDate = new Date();
+                targetDate.setHours(targetDate.getHours() + 5);
+                localStorage.setItem(targetDateKey, targetDate);
+            } else {
+                targetDate = new Date(targetDate);
+            }
+
+            function updateTimer() {
+                const now = new Date();
+                const timeDifference = targetDate - now;
+                if (timeDifference <= 0) {
+                    document.getElementById('timer').innerHTML = "0 : 00 : 00";
+                    clearInterval(timerInterval);
+                    localStorage.removeItem(targetDateKey);
+                } else {
+                    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                    document.getElementById('timer').innerHTML = `${hours} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+                }
+            }
+            const timerInterval = setInterval(updateTimer, 1000);
+            updateTimer();
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTimer);
+    </script>
+
+
+    <script>
+        function setActivePage() {
+            const currentPage = window.location.pathname.split("/").pop();
+            const links = document.querySelectorAll('.explore-button, .featured-button, .daily-best-button');
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    link.classList.add('current');
+                }
+            });
+        }
+
+        setActivePage();
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+
+            const navbar = `
+    <div class="navbar-item">
+        <img src="./assets/logo.png" alt="Drop It">
+        <a href="index.html"><h1>Drop It</h1></a>
+    </div>
+    <div class="navbar-item">
+        <div class="search-container">
+            <div class="dropdown">
+            <span class="all-products-dropdown">
+                <i class="fas fa-bars"></i>
+                All Categories 
+                <i class="fas fa-chevron-down" style="color: black;"></i>
+            </span>
+            <div class="dropdown-content">
+                <a href="vegetables.html">Vegetables</a>
+                <a href="fruits.html">Fruits</a>
+                <a href="meat.html">Meat</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="home-essentials.html">Home Essentials</a>
+            </div>
+        </div>
+
+            <div class="search-input-container">
+                <input type="text" id="search-input" placeholder="">
+                <span id="placeholder-text" class="placeholder-text">Search for "Ice cream"</span>
+            </div>
+            <button type="button" class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    <div class="navbar-item navbar-right">
+        <div class="navbar-item">
+            <a href="wishlist.html"><img src="./assets/heart.png" alt="Heart"></a>
+        </div>
+        <div class="navbar-item dropdown">
+            <a href="cart.html"><img src="./assets/li-cart.png" alt="Cart"><span id="cart-quantity" class="cart-quantity"></span></a>
+        </div>
+        <div class="navbar-item dropdown">
+        <img src="./assets/signup.png" alt="Sign Up">                
+        <div class="dropdown-content">
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+`;
+
+            document.getElementById('navbar').innerHTML = navbar;
+
+
+            const placeholders = ['Search for "Ice cream"', 'Search for "Biscuits"', 'Search for "Detergents"', 'Search for "Dog Food"', 'Search for "Makeup"', 'Search for "Sunscreen"'];
+            let placeholderIndex = 0;
+            let placeholderInterval;
+
+            function updatePlaceholder() {
+                const placeholderText = document.getElementById('placeholder-text');
+                placeholderText.classList.add('scroll-up');
+
+                setTimeout(() => {
+                    placeholderIndex = (placeholderIndex + 1) % placeholders.length;
+                    placeholderText.textContent = placeholders[placeholderIndex];
+                    placeholderText.classList.remove('scroll-up');
+                }, 500);
+            }
+
+            function startAnimation() {
+                placeholderInterval = setInterval(updatePlaceholder, 4000);
+            }
+
+            function stopAnimation() {
+                clearInterval(placeholderInterval);
+            }
+
+            startAnimation();
+
+            const searchInput = document.getElementById('search-input');
+            const placeholderText = document.getElementById('placeholder-text');
+
+            searchInput.addEventListener('input', function () {
+                if (searchInput.value.length > 0) {
+                    stopAnimation();
+                    placeholderText.style.display = 'none';
+                } else {
+                    placeholderText.style.display = 'block';
+                    startAnimation();
+                }
+            });
+
+            const cartQuantityNum = document.getElementById('cart-quantity');
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            let totalQuantity = 0;
+            cartItems.forEach(item => {
+                totalQuantity += item.quantity;
+            });
+
+            if (totalQuantity > 0) {
+                cartQuantityNum.textContent = totalQuantity;
+                cartQuantityNum.style.display = 'inline-block';
+            } else {
+                cartQuantityNum.style.display = 'none';
+            }
+        });
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            cartItems.forEach(item => {
+                const productItems = document.querySelectorAll('.product-item, .product-card');
+                productItems.forEach(productItem => {
+                    const productName = productItem.querySelector('.product-name-wrapper p, .product-title').textContent;
+                    if (productName === item.name) {
+                        const priceAddContainer = productItem.querySelector('.product-price-add');
+                        const addToCartContainer = priceAddContainer.querySelector('.add-to-cart');
+                        const quantityControls = priceAddContainer.querySelector('.quantity-controls');
+                        const quantitySpan = quantityControls.querySelector('.quantity, .daily-quantity');
+
+                        addToCartContainer.style.display = 'none';
+                        quantityControls.style.display = 'flex';
+                        quantitySpan.textContent = item.quantity;
+                    }
+                });
+            });
+
+            document.querySelectorAll('.add-to-cart-button, .daily-add-to-cart-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productItem = button.closest('.product-item, .product-card');
+                    const priceAddContainer = productItem.querySelector('.product-price-add');
+                    const addToCartContainer = priceAddContainer.querySelector('.add-to-cart');
+                    const quantityControls = priceAddContainer.querySelector('.quantity-controls');
+
+                    addToCartContainer.style.display = 'none';
+                    quantityControls.style.display = 'flex';
+
+                    updateCartState(button);
+                });
+            });
+        });
+
+        function updateQuantity(button, change) {
+            const quantityControls = button.closest('.quantity-controls');
+            const quantitySpan = quantityControls.querySelector('.quantity, .daily-quantity');
+            let currentQuantity = parseInt(quantitySpan.textContent);
+
+            currentQuantity += change;
+
+            if (currentQuantity >= 1) {
+                quantitySpan.textContent = currentQuantity;
+            } else {
+                // edge case
+                const productItem = button.closest('.product-item, .product-card');
+                const priceAddContainer = productItem.querySelector('.product-price-add');
+                const addToCartContainer = priceAddContainer.querySelector('.add-to-cart');
+
+                addToCartContainer.style.display = 'block';
+                quantityControls.style.display = 'none';
+                quantitySpan.textContent = 0;
+            }
+
+            updateCartState(button);
+        }
+
+        function updateCartState(button) {
+            const productItem = button.closest('.product-item, .product-card');
+            const productImage = productItem.querySelector('img').src;
+            const productName = productItem.querySelector('.product-name-wrapper p, .product-title').textContent;
+            const productQuantity = parseInt(productItem.querySelector('.quantity, .daily-quantity').textContent);
+            const productPrice = parseFloat(productItem.querySelector('.product-price, .new-price').textContent.replace('₹', ''));
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+
+            if (existingItemIndex > -1) {
+                if (productQuantity > 0) {
+                    cartItems[existingItemIndex].quantity = productQuantity;
+                } else {
+                    cartItems.splice(existingItemIndex, 1);
+                }
+            } else if (productQuantity > 0) {
+                cartItems.push({
+                    image: productImage,
+                    name: productName,
+                    quantity: productQuantity,
+                    price: productPrice
+                });
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // for quantity update cart in navbar
+            const cartQuantityNum = document.getElementById('cart-quantity');
+            let totalQuantity = 0;
+            cartItems.forEach(item => {
+                totalQuantity += item.quantity;
+            });
+
+            if (totalQuantity > 0) {
+                cartQuantityNum.textContent = totalQuantity;
+                cartQuantityNum.style.display = 'inline-block';
+            } else {
+                cartQuantityNum.style.display = 'none';
+            }
+        }
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const stars = document.querySelectorAll(".star");
+
+            stars.forEach(star => {
+                star.addEventListener("click", function () {
+                    const rating = parseInt(this.getAttribute("data-rating"));
+                    const starsContainer = this.parentElement;
+                    updateStars(starsContainer, rating);
+                });
+            });
+
+            function updateStars(starsContainer, rating) {
+                const stars = starsContainer.querySelectorAll(".star");
+
+                stars.forEach(star => {
+                    const starRating = parseInt(star.getAttribute("data-rating"));
+                    if (starRating <= rating) {
+                        star.classList.add("filled");
+                    } else {
+                        star.classList.remove("filled");
+                    }
+                });
+            }
+        });
+
+
+
+
+
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     const sliders = document.querySelectorAll('.categories, .featured-products');
+
+        //     sliders.forEach(slider => {
+        //         const itemList = slider.querySelector('.category-list') || slider.querySelector('.product-list');
+        //         const leftArrow = slider.querySelector('.left-arrow');
+        //         const rightArrow = slider.querySelector('.right-arrow');
+
+        //         let scrollAmount = 0;
+        //         const scrollMax = itemList.scrollWidth - itemList.clientWidth;
+        //         const scrollStep = itemList.clientWidth / 4;
+
+        //         rightArrow.addEventListener("click", function() {
+        //             if (scrollAmount < scrollMax) {
+        //                 scrollAmount += scrollStep;
+        //                 itemList.scrollTo({
+        //                     top: 0,
+        //                     left: scrollAmount,
+        //                     behavior: "smooth"
+        //                 });
+        //             }
+        //         });
+
+        //         leftArrow.addEventListener("click", function() {
+        //             if (scrollAmount > 0) {
+        //                 scrollAmount -= scrollStep;
+        //                 itemList.scrollTo({
+        //                     top: 0,
+        //                     left: scrollAmount,
+        //                     behavior: "smooth"
+        //                 });
+        //             }
+        //         });
+        //     });
+        // });
+
+
+
+
+
+
+
+
+
+        // dislay arrows when there are products to slide
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const sliders = document.querySelectorAll('.categories, .featured-products');
+
+            sliders.forEach(slider => {
+                const itemList = slider.querySelector('.category-list') || slider.querySelector('.product-list');
+                const leftArrow = slider.querySelector('.left-arrow');
+                const rightArrow = slider.querySelector('.right-arrow');
+
+                let scrollAmount = 0;
+                const scrollMax = itemList.scrollWidth - itemList.clientWidth;
+                const scrollStep = itemList.clientWidth / 4;
+
+                function updateArrows() {
+                    if (scrollAmount <= 0) {
+                        leftArrow.style.display = 'none';
+                    } else {
+                        leftArrow.style.display = 'block';
+                    }
+                    if (scrollAmount >= scrollMax) {
+                        rightArrow.style.display = 'none';
+                    } else {
+                        rightArrow.style.display = 'block';
+                    }
+                }
+                updateArrows();
+
+                rightArrow.addEventListener("click", function () {
+                    if (scrollAmount < scrollMax) {
+                        scrollAmount += scrollStep;
+                        if (scrollAmount > scrollMax) scrollAmount = scrollMax;
+                        itemList.scrollTo({
+                            top: 0,
+                            left: scrollAmount,
+                            behavior: "smooth"
+                        });
+                        updateArrows();
+                    }
+                });
+
+                leftArrow.addEventListener("click", function () {
+                    if (scrollAmount > 0) {
+                        scrollAmount -= scrollStep;
+                        if (scrollAmount < 0) scrollAmount = 0;
+                        itemList.scrollTo({
+                            top: 0,
+                            left: scrollAmount,
+                            behavior: "smooth"
+                        });
+                        updateArrows();
+                    }
+                });
+            });
+        });
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const footerHTML = `
+    <div class="subscription">
+        <h2>Subscribe to our Newsletter</h2>
+        <form action="#" method="post">
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+    <div class="feature-container">
+        <div class="feature">
+            <img src="./assets/bestdeals.png" alt="Deals">
+            <div>
+                <h3>Best Prices & Deals</h3>
+                <p style="color: black";>Don't miss our daily amazing deals and prices</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="./assets/refundable.png" alt="Refund">
+            <div>
+                <h3>Refundable</h3>
+                <p style="color: black";>If your items have damage we agree to refund it</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="assets/delivery.png" alt="Free Delivery">
+            <div>
+                <h3>Free Delivery</h3>
+                <p style="color: black";>Do purchase over $50 and get free delivery anywhere</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-top">
+            <div class="contact-info">
+                <div>
+                    <div style="display: flex; align-items: center;">
+                        <img src="assets/logo.png" alt="Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                        <h4 style="margin: 0;">Drop It</h4>
+                    </div>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                            <a href="#">Address</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                            <a href="#">Call us</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                            <a href="#">Email</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock" style="margin-right: 10px;"></i>
+                            <a href="#">Work Hours</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Hot Deals</a></li>
+                    <li><a href="#">Promotions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Help Centre</h4>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Refund</a></li>
+                    <li><a href="#">Checkout</a></li>
+                    <li><a href="#">Q&A</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="display: flex; align-items: center;">
+                <p style = "color:black";>&copy; 2024 Grocery Mart. All rights reserved. | <a href="#">Privacy Policy</a></p>
+                <img src="images/Payment.png" alt="American Express">
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    `;
+            document.body.insertAdjacentHTML('beforeend', footerHTML);
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(star => {
+        star.addEventListener("click", function() {
+            const rating = parseInt(this.getAttribute("data-rating"));
+            const starsContainer = this.parentElement;
+            updateStars(starsContainer, rating);
+        });
+    });
+
+    function updateStars(starsContainer, rating) {
+        const stars = starsContainer.querySelectorAll(".star");
+
+        stars.forEach(star => {
+            const starRating = parseInt(star.getAttribute("data-rating"));
+            if (starRating <= rating) {
+                star.classList.add("filled");
+            } else {
+                star.classList.remove("filled");
+            }
+        });
+    }
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    cartItems.forEach(item => {
+        const productItems = document.querySelectorAll('.product-item, .product-card');
+        productItems.forEach(productItem => {
+            const productName = productItem.querySelector('.product-name-wrapper p, .product-title').textContent;
+            if (productName === item.name) {
+                const priceAddContainer = productItem.querySelector('.product-price-add');
+                const addToCartContainer = priceAddContainer.querySelector('.add-to-cart');
+                const quantityControls = priceAddContainer.querySelector('.quantity-controls');
+                const quantitySpan = quantityControls.querySelector('.quantity, .daily-quantity');
+                
+                addToCartContainer.style.display = 'none';
+                quantityControls.style.display = 'flex';
+                quantitySpan.textContent = item.quantity;
+            }
+        });
+    });
+
+    document.querySelectorAll('.add-to-cart-button, .daily-add-to-cart-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const productItem = button.closest('.product-item, .product-card');
+            const priceAddContainer = productItem.querySelector('.product-price-add');
+            const addToCartContainer = priceAddContainer.querySelector('.add-to-cart');
+            const quantityControls = priceAddContainer.querySelector('.quantity-controls');
+            
+            addToCartContainer.style.display = 'none';
+            quantityControls.style.display = 'flex';
+
+            updateCartState(button);
+        });
+    });
+});
+
+function updateQuantity(button, change) {
+    const quantityControls = button.closest('.quantity-controls');
+    const quantitySpan = quantityControls.querySelector('.quantity, .daily-quantity');
+    let currentQuantity = parseInt(quantitySpan.textContent);
+
+    currentQuantity += change;
+
+    if (currentQuantity >= 1) {
+        quantitySpan.textContent = currentQuantity;
+    } else {
+        // edge case
+        const productItem = button.closest('.product-item, .product-card');
+        const priceAddContainer = productItem.querySelector('.product-price-add');
+        const addToCartContainer = priceAddContainer.querySelector('.add-to-cart');
+        
+        addToCartContainer.style.display = 'block';
+        quantityControls.style.display = 'none';
+        quantitySpan.textContent = 0; 
+    }
+
+    updateCartState(button);
+}
+
+function updateCartState(button) {
+    const productItem = button.closest('.product-item, .product-card');
+    const productImage = productItem.querySelector('img').src;
+    const productName = productItem.querySelector('.product-name-wrapper p, .product-title').textContent;
+    const productQuantity = parseInt(productItem.querySelector('.quantity, .daily-quantity').textContent);
+    const productPrice = parseFloat(productItem.querySelector('.product-price, .new-price').textContent.replace('₹', ''));
+    
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+
+    if (existingItemIndex > -1) {
+        if (productQuantity > 0) {
+            cartItems[existingItemIndex].quantity = productQuantity;
+        } else {
+            cartItems.splice(existingItemIndex, 1);
+        }
+    } else if (productQuantity > 0) {
+        cartItems.push({
+            image: productImage,
+            name: productName,
+            quantity: productQuantity,
+            price: productPrice
+        });
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    // for quantity update cart in navbar
+    const cartQuantityNum = document.getElementById('cart-quantity');
+    let totalQuantity = 0;
+    cartItems.forEach(item => {
+        totalQuantity += item.quantity;
+    });
+
+    if (totalQuantity > 0) {
+        cartQuantityNum.textContent = totalQuantity;
+        cartQuantityNum.style.display = 'inline-block';
+    } else {
+        cartQuantityNum.style.display = 'none';
+    }
+}
+
+
+
+
+
+
+function toggleWishlist(icon, productName) {
+    const productElement = icon.closest('.product-item');
+    const productImage = productElement.querySelector('img').src.split('/').pop();
+    const productPrice = productElement.querySelector('.product-price').textContent.replace('₹ ', '');
+
+    const product = {
+        name: productName,
+        image: productImage,
+        price: productPrice
+    };
+
+    if (!icon.classList.contains('fas')) {
+        icon.classList.add('fas');
+        icon.classList.remove('far');
+        icon.classList.add('red');
+        icon.classList.add('beat');
+        setTimeout(() => {
+            icon.classList.remove('beat');
+        }, 500);
+        addToWishlist(product);
+    } else {
+        icon.classList.remove('fas');
+        icon.classList.add('far');
+        icon.classList.remove('red');
+        removeFromWishlist(productName);
+    }
+}
+
+function addToWishlist(product) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (!wishlist.some(item => item.name === product.name)) {
+        wishlist.push(product);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }
+}
+
+function removeFromWishlist(productName) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    wishlist = wishlist.filter(item => item.name !== productName);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const productElements = document.querySelectorAll('.product-item');
+
+    productElements.forEach(product => {
+        const productName = product.querySelector('.product-name-wrapper p').textContent;
+        const heartIcon = product.querySelector('.heart-icon');
+
+        if (wishlistItems.some(item => item.name === productName)) {
+            heartIcon.classList.add('fas');
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('red');
+        } else {
+            heartIcon.classList.remove('fas');
+            heartIcon.classList.add('far');
+            heartIcon.classList.remove('red');
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
